@@ -12,18 +12,18 @@ this API library will help your problems regarding JIRA. hope you enjoy it.
 composer.json
 
 ```
-composer require chobie/jira-api-restclient 2.0.*
+
 ```
 
 
 ````php
 <?php
-$api = new chobie\Jira\Api(
+$api = new JiraRestClient\Api(
     "https://your-jira-project.net",
-    new chobie\Jira\Api\Authentication\Basic("yourname", "password")
+    new JiraRestClient\Api\Authentication\Basic("yourname", "password")
 );
 
-$walker = new chobie\Jira\Issues\Walker($api);
+$walker = new JiraRestClient\Issues\Walker($api);
 $walker->push("project = YOURPROJECT AND (status != closed and status != resolved) ORDER BY priority DESC");
 foreach ($walker as $issue) {
     var_dump($issue);
@@ -34,6 +34,13 @@ foreach ($walker as $issue) {
 # License
 
 MIT License
+
+# Forked from
+
+Shuhei Tanuma
+https://github.com/chobie/jira-api-restclient
+http://chobie.github.io/
+
 
 # JIRA5 Rest API Documents
 
