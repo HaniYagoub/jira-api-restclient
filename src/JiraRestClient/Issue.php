@@ -308,6 +308,17 @@ class Issue
         }
     }
 
+    public function getComponents()
+    {
+        $components = array();
+        if (isset($this->fields['Component/s'])) {
+            foreach ($this->fields['Component/s'] as $compData) {
+                $components[] = new Component($compData);
+            }
+        }
+        return $components;
+    }
+
     /**
      * get information represented in call output due to expand=... suffix
      * @see https://docs.atlassian.com/jira/REST/latest/
