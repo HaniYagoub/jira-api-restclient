@@ -218,7 +218,7 @@ class Issue
     public function getStatus()
     {
         if (isset($this->fields['Status'])) {
-            return $this->fields['Status'];
+            return new Status($this->fields['Status']);
         }
     }
 
