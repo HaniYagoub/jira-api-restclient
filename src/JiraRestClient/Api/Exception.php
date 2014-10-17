@@ -22,32 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace chobie\Jira\Api\Authentication;
+namespace JiraRestClient\Api;
 
-class Basic implements AuthenticationInterface
+class Exception extends \Exception
 {
-    private $user_id;
-    private $password;
-
-    public function __construct($user_id, $password)
-    {
-        $this->user_id = $user_id;
-        $this->password = $password;
-    }
-
-    public function getCredential()
-    {
-        return base64_encode($this->user_id . ':' . $this->password);
-    }
-
-    public function getId()
-    {
-        return $this->user_id;
-    }
-
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
 }

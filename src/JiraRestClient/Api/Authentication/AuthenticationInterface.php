@@ -22,23 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace chobie\Jira\Api\Client;
+namespace JiraRestClient\Api\Authentication;
 
-use chobie\Jira\Api\Authentication\AuthenticationInterface;
-
-interface ClientInterface
+interface AuthenticationInterface
 {
-    /**
-     * send request to the api server
-     *
-     * @param $method
-     * @param $url
-     * @param array $data
-     * @param $endpoint
-     * @param $credential
-     * @return array|string
-     *
-     * @throws \Exception
-     */
-    public function sendRequest($method, $url, $data = array(), $endpoint, AuthenticationInterface $credential, $isFile = false, $debug = false);
+    public function getCredential();
+
+    public function getId();
+
+    public function getPassword();
 }

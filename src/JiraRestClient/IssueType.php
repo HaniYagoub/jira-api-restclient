@@ -22,8 +22,64 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace chobie\Jira\Api;
+namespace JiraRestClient;
 
-class Exception extends \Exception
+class IssueType
 {
+    protected $self;
+
+    protected $id;
+
+    protected $description;
+
+    protected $iconUrl;
+
+    protected $name;
+
+    protected $subtask;
+
+    private $acceptable_keys = array(
+        "self",
+        "id",
+        "description",
+        "iconUrl",
+        "name",
+        "subtask",
+    );
+
+    public function __construct($types)
+    {
+        foreach ($types as $key => $value) {
+            if (in_array($key, $this->acceptable_keys)) {
+                $this->$key = $value;
+            } else {
+                throw new \Exception("the key {$key} does not support");
+            }
+        }
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function isSubtask()
+    {
+        return $this->subtask;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function getIconUrl()
+    {
+        return $this->iconUrl;
+    }
 }

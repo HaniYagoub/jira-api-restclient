@@ -13,7 +13,7 @@ $api = getApiClient();
  * @see
  * https://developer.atlassian.com/static/rest/jira/5.0.html#id202584
  */
-$walker = new \chobie\Jira\Issues\Walker($api);
+$walker = new JiraRestClient\Issues\Walker($api);
 $walker->push("project = TICKETACEG AND  updated > -1d ORDER BY priority DESC", "*navigable");
 
 /** okay, then just do foreach walker variable to pull issues */

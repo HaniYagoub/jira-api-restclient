@@ -2,7 +2,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2014 Tim Otten
+ * Copyright (c) 2014 Shuhei Tanuma
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,28 +20,25 @@
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-namespace chobie\Jira\Api\Authentication;
+namespace JiraRestClient\Api\Client;
 
-class Anonymous implements AuthenticationInterface
+use JiraRestClient\Api\Authentication\AuthenticationInterface;
+
+interface ClientInterface
 {
-    public function __construct()
-    {
-    }
-
-    public function getCredential()
-    {
-        return null;
-    }
-
-    public function getId()
-    {
-        return null;
-    }
-
-    public function getPassword()
-    {
-        return null;
-    }
-
+    /**
+     * send request to the api server
+     *
+     * @param $method
+     * @param $url
+     * @param array $data
+     * @param $endpoint
+     * @param $credential
+     * @return array|string
+     *
+     * @throws \Exception
+     */
+    public function sendRequest($method, $url, $data = array(), $endpoint, AuthenticationInterface $credential, $isFile = false, $debug = false);
 }

@@ -22,12 +22,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace chobie\Jira;
+namespace JiraRestClient;
 
-use chobie\Jira\Api\Authentication\AuthenticationInterface;
-use chobie\Jira\Api\Client\ClientInterface;
-use chobie\Jira\Api\Result;
-use chobie\Jira\Api\Client\CurlClient;
+use JiraRestClient\Api\Authentication\AuthenticationInterface;
+use JiraRestClient\Api\Client\ClientInterface;
+use JiraRestClient\Api\Result;
+use JiraRestClient\Api\Client\CurlClient;
 
 class Api
 {
