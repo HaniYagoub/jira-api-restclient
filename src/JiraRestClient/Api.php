@@ -181,6 +181,12 @@ class Api
         return $result;
     }
 
+    public function getWorklogs($issueKeyOrId)
+    {
+        $result = $this->api(self::REQUEST_GET, "/rest/api/2/issue/{$issueKeyOrId}/worklog", array(), true);
+        return $result;
+    }
+
     /**
      * Returns the meta data for creating issues. This includes the available projects, issue types
      * and fields, including field types and whether or not those fields are required.
