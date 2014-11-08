@@ -1,31 +1,35 @@
 {
-  "name" : "toropnet/jira-api-restclient",
-  "description" : "JIRA REST API.",
-  "require" : {
-    "php" : ">=5.3.0"
-  },
-  "require-dev" : {
-    "phpunit/phpunit" : "4.1.*"
-  },
-  "authors" : [ 
-  {
-    "name" : "Jérémie Colombo",
-    "homepage" : "https://github.com/toropnet/",
-    "email" : "jeremie@torop.net"
-  },
-  {
-    "name" : "Shuhei Tanuma",
-    "homepage" : "http://chobie.github.io/",
-    "email" : "chobieeee@php.net"
-  } 
-  ],
-  "keywords" : [ "jira", "rest", "api" ],
-  "minimum-stability" : "dev",
-  "autoload" : {
-    "psr-4" : {
-      "JiraRestClient\\" : "src/JiraRestClient"
-    }
-  },
-  "license" : "MIT",
-  "type" : "library"
+    "name": "haniyagoub/jira-api-restclient",
+    "description": "JIRA REST API.",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "authors": [
+        {
+            "name": "Hani Yagoub",
+            "homepage": "https://github.com/HaniYagoub"
+        },
+        {
+            "name": "Jérémie Colombo",
+            "homepage": "https://github.com/toropnet/",
+            "email": "jeremie@torop.net"
+        },
+        {
+            "name": "Shuhei Tanuma",
+            "homepage": "http://chobie.github.io/",
+            "email": "chobieeee@php.net"
+        }
+    ],
+    "keywords": ["jira", "rest", "api"],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "JiraRestClient\\": "src/JiraRestClient"
+        }
+    },
+    "license": "MIT",
+    "type": "library"
 }
