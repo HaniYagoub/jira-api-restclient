@@ -246,6 +246,24 @@ class Api
     }
 
     /**
+     * add a worklog to a ticket
+     *
+     * @param string $issueKey
+     * @param mixed $params
+     * @return mixed
+     */
+    public function addWorkLog($issueKey, $params)
+    {
+        if (is_string($params)) {
+            // if $params is scalar string value -> wrapping it properly
+            $params = array(
+                'body' => $params
+            );
+        }
+        return $this->api(self::REQUEST_POST, sprintf("/rest/api/2/issue/%s/worklog", $issueKey), $params);
+    }
+
+    /**
      * get available transitions for a ticket
      *
      * issue key should be YOURPROJ-22
