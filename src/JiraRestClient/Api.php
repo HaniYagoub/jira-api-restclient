@@ -242,7 +242,7 @@ class Api
                 'body' => $params
             );
         }
-        return $this->api(self::REQUEST_POST, sprintf("/rest/api/2/issue/%s/comment", $issueKey), $params);
+        return $this->api(self::REQUEST_PUT, sprintf("/rest/api/2/issue/%s/comment", $issueKey), $params);
     }
 
     /**
@@ -260,7 +260,7 @@ class Api
                 'body' => $params
             );
         }
-        return $this->api(self::REQUEST_POST, sprintf("/rest/api/2/issue/%s/worklog", $issueKey), $params);
+        return $this->api(self::REQUEST_PUT, sprintf("/rest/api/2/issue/%s/worklog", $issueKey), $params);
     }
 
     /**
