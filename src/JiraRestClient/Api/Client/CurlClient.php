@@ -94,7 +94,8 @@ class CurlClient implements ClientInterface
         $errorNumber = curl_errno($curl);
         if ($errorNumber > 0) {
             throw new Exception(
-                sprintf('Jira request failed: code = %s, "%s"', $errorNumber, curl_error($curl))
+                sprintf('Jira request failed: code = %s, "%s"', $errorNumber, curl_error($curl)),
+                $errorNumber
             );
         }
 
